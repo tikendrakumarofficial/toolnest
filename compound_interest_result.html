@@ -1,0 +1,140 @@
+<![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Result</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .result-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .result-container h1 {
+            color: #007bff; /* Blue for Compound Interest */
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .result-container p {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: normal;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .detailed-result p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+        }
+
+        .detailed-result span {
+            font-weight: 700;
+            color: #6a11cb; /* Purple for emphasis */
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            background-color: #6c757d; /* Grey for back button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+
+        /* Mobile responsiveness for result page */
+        @media (max-width: 600px) {
+            .result-container {
+                padding: 25px;
+                width: 95%;
+            }
+
+            .result-container h1 {
+                font-size: 1.8em;
+            }
+
+            .result-container p {
+                font-size: 1.2em;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Compound Interest Result</h1>
+        <div class="detailed-result">
+            <p>Principal Amount: <span id="principalAmountValue"></span></p>
+            <p>Annual Interest Rate: <span id="annualInterestRateValue"></span></p>
+            <p>Number of Years: <span id="numberOfYearsValue"></span></p>
+            <p>Compounding Frequency: <span id="compoundingFrequencyValue"></span></p>
+            <p>Final Amount: <span id="finalAmountValue"></span></p>
+            <p>Total Interest Earned: <span id="totalInterestEarnedValue"></span></p>
+        </div>
+        <a href="compound_interest_calculator.html" class="back-button">Calculate Another Compound Interest</a>
+        <a href="index.html" class="back-button" style="margin-left: 10px;">Back to Home</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const principalAmount = urlParams.get('principal');
+            const annualInterestRate = urlParams.get('rate');
+            const numberOfYears = urlParams.get('years');
+            const compoundingFrequency = urlParams.get('frequency');
+            const finalAmount = urlParams.get('finalAmount');
+            const totalInterestEarned = urlParams.get('totalInterest');
+
+            const frequencyMap = {
+                1: 'Annually',
+                2: 'Semi-annually',
+                4: 'Quarterly',
+                12: 'Monthly'
+            };
+
+            if (principalAmount && annualInterestRate && numberOfYears && compoundingFrequency && finalAmount && totalInterestEarned) {
+                document.getElementById('principalAmountValue').textContent = `₹${parseFloat(principalAmount).toFixed(2)}`;
+                document.getElementById('annualInterestRateValue').textContent = `${parseFloat(annualInterestRate).toFixed(2)}%`;
+                document.getElementById('numberOfYearsValue').textContent = numberOfYears;
+                document.getElementById('compoundingFrequencyValue').textContent = frequencyMap[compoundingFrequency] || 'N/A';
+                document.getElementById('finalAmountValue').textContent = `₹${parseFloat(finalAmount).toFixed(2)}`;
+                document.getElementById('totalInterestEarnedValue').textContent = `₹${parseFloat(totalInterestEarned).toFixed(2)}`;
+            } else {
+                document.getElementById('principalAmountValue').textContent = 'N/A';
+                document.getElementById('annualInterestRateValue').textContent = 'N/A';
+                document.getElementById('numberOfYearsValue').textContent = 'N/A';
+                document.getElementById('compoundingFrequencyValue').textContent = 'N/A';
+                document.getElementById('finalAmountValue').textContent = 'N/A';
+                document.getElementById('totalInterestEarnedValue').textContent = 'N/A';
+            }
+        });
+    </script>
+</body>
+</html>

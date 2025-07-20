@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+        /* Specific styles for SI Calculator if needed */
+        .container h1 {
+            color: #17a2b8; /* Teal for SI */
+        }
+        .result-si {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #17a2b8;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+        .back-button {
+            background-color: #649ac9; /* Grey for back button */
+        }
+        .back-button:hover {
+            background-color: #0b77c8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Percentage Calculator</h1>
+        <div class="input-group">
+            <label for="numberX">What is the percentage of:</label>
+            <input type="number" id="numberX" placeholder="Enter the first number">
+        </div>
+        <div class="input-group">
+            <label for="numberY">out of:</label>
+            <input type="number" id="numberY" placeholder="Enter the second number">
+        </div>
+        <button id="calculatePercentageBtn">Calculate Percentage</button>
+        <div class="result">
+            <!-- Results will be displayed here -->
+        </div>
+          <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+    <script src="percentage_calculator_script.js"></script>
+</body>
+</html>

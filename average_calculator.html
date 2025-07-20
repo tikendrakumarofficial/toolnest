@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+        .container h1 {
+            color: #17a2b8; /* Teal for SI */
+        }
+        .result-si {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #17a2b8;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+        .back-button {
+            background-color: #649ac9; /* Grey for back button */
+        }
+        .back-button:hover {
+            background-color: #0b77c8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Average Calculator</h1>
+        <div class="input-group">
+            <label for="numberList">Enter numbers separated by commas:</label>
+            <input type="text" id="numberList" placeholder="e.g., 1, 2, 3, 4, 5">
+        </div>
+        <button id="calculateAverageBtn">Calculate Average</button>
+        <div class="result">
+            <!-- Results will be displayed here -->
+        </div>
+          <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+    <script src="average_calculator_script.js"></script>
+</body>
+</html>

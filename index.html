@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Tools - Free Online Calculators for Finance, Health, Math</title>
+    <meta name="description" content="Collection of free online calculators including age calculator, BMI calculator, EMI calculator, GST calculator, and more. All calculations done client-side for privacy.">
+    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2702088683156670~7446390882"/>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #4a6bff;
+        }
+        .tool-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .tool-desc {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4a6bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background: #3a5bef;
+        }
+        .site-footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-about, .footer-links, .footer-social {
+            flex: 1;
+            margin: 0 20px;
+            min-width: 250px;
+        }
+        .site-footer h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-about p {
+            line-height: 1.8;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links ul li a:hover {
+            color: #ffffff;
+        }
+        .footer-social .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #34495e;
+            color: white;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .footer-social .social-icon:hover {
+            background-color: #4a6bff;
+        }
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-about, .footer-links, .footer-social {
+                margin-bottom: 30px;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Free Online Calculator Tools</h1>
+            <p class="subtitle">Lightweight, fast, and completely client-side calculators</p>
+        </header>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-birthday-cake"></i>
+                </div>
+                <h2 class="tool-title">Age Calculator</h2>
+                <h3 class="tool-desc">Calculate Your Exact Age in Years, Months, and Days</h3>
+                <p>Find out how old you are with our precise age calculator tool.</p>
+                <a href="age_calculator.html" class="btn">Open Age Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h2 class="tool-title">EMI Calculator</h2>
+                <h3 class="tool-desc">Loan EMI Calculator with Principal and Interest Breakdown</h3>
+                <p>Calculate your monthly loan payments with our easy-to-use EMI calculator.</p>
+                <a href="emi_calculator.html" class="btn">Open EMI Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-weight"></i>
+                </div>
+                <h2 class="tool-title">BMI Calculator</h2>
+                <h3 class="tool-desc">Body Mass Index Calculator with Health Categories</h3>
+                <p>Check your BMI using metric or imperial units with instant results.</p>
+                <a href="bmi_calculator.html" class="btn">Open BMI Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h2 class="tool-title">Simple Interest Calculator</h2>
+                <h3 class="tool-desc">Calculate Simple Interest for Loans and Investments</h3>
+                <p>Flexible calculator for years, months, or days interest periods.</p>
+                <a href="si_calculator.html" class="btn">Open Interest Calculator</a>
+            </div>
+            
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <h2 class="tool-title">GST Calculator</h2>
+                <h3 class="tool-desc">Goods and Services Tax Calculator</h3>
+                <p>Calculate GST amounts quickly and easily for your business needs.</p>
+                <a href="gst_calculator.html" class="btn">Open GST Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h2 class="tool-title">Discount Calculator</h2>
+                <h3 class="tool-desc">Calculate Discounts and Final Prices</h3>
+                <p>Determine sale prices and savings with our discount calculator.</p>
+                <a href="discount_calculator.html" class="btn">Open Discount Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-chart-area"></i>
+                </div>
+                <h2 class="tool-title">Break-even Point Calculator</h2>
+                <h3 class="tool-desc">Business Break-even Analysis Tool</h3>
+                <p>Find when your revenue equals costs with our break-even calculator.</p>
+                <a href="break_even_calculator.html" class="btn">Open Break-even Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-percent"></i>
+                </div>
+                <h2 class="tool-title">Percentage Calculator</h2>
+                <h3 class="tool-desc">Percentage Increase/Decrease Calculator</h3>
+                <p>Perform all types of percentage calculations with ease.</p>
+                <a href="percentage_calculator.html" class="btn">Open Percentage Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h2 class="tool-title">Average Calculator</h2>
+                <h3 class="tool-desc">Mean Calculator for Number Sets</h3>
+                <p>Calculate the average (mean) of any set of numbers instantly.</p>
+                <a href="average_calculator.html" class="btn">Open Average Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-square-root-alt"></i>
+                </div>
+                <h2 class="tool-title">Factorial Calculator</h2>
+                <h3 class="tool-desc">Calculate Factorials of Numbers</h3>
+                <p>Compute the factorial of any non-negative integer.</p>
+                <a href="factorial_calculator.html" class="btn">Open Factorial Calculator</a>
+            </div>
+          
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h2 class="tool-title">Compound Interest Calculator</h2>
+                <h3 class="tool-desc">Investment Growth Calculator</h3>
+                <p>See how compound interest affects your investments over time.</p>
+                <a href="compound_interest_calculator.html" class="btn">Open Compound Interest Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h2 class="tool-title">Date Difference Calculator</h2>
+                <h3 class="tool-desc">Days Between Dates Calculator</h3>
+                <p>Calculate the number of days between any two dates.</p>
+                <a href="date_difference_calculator.html" class="btn">Open Date Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2 class="tool-title">Next Birthday Calculator</h2>
+                <h3 class="tool-desc">Days Until Your Next Birthday</h3>
+                <p>Find out how many days are left until your next birthday.</p>
+                <a href="next_birthday_calculator.html" class="btn">Open Birthday Calculator</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h2 class="tool-title">Calorie Calculator</h2>
+                <h3 class="tool-desc">Daily Calorie Needs Calculator</h3>
+                <p>Estimate your daily calorie requirements based on activity level.</p>
+                <a href="calorie_calculator.html" class="btn">Open Calorie Calculator</a>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>About Calculator Tools</h3>
+                    <p>A collection of free, client-side online calculators for various needs including finance, health, and mathematics. Your privacy is our priority.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms_of_service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/madebytikendra?igsh=Y3QzcjB3OTYxbWJw&utm_source=ig_contact_invite" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 Calculator Tools. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

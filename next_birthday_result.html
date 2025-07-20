@@ -1,0 +1,139 @@
+<![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Birthday Result</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inherit styles from si_result.html and adapt */
+        .result-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .result-container h1 {
+            color: #28a745; /* Green for Birthday */
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .result-container p {
+            font-size: 1.2em;
+            color: #333;
+            font-weight: normal;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .detailed-result p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+        }
+
+        .detailed-result span {
+            font-weight: 700;
+            color: #0056b3; /* Highlight numbers */
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            background-color: #6c757d; /* Grey for back button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268; /* Darker grey on hover */
+        }
+
+        /* Mobile responsiveness for result page */
+        @media (max-width: 600px) {
+            .result-container {
+                padding: 25px;
+                width: 95%;
+            }
+
+            .result-container h1 {
+                font-size: 1.8em;
+            }
+
+            .result-container p {
+                font-size: 1.2em;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Your Next Birthday</h1>
+        <div class="detailed-result">
+            <p>Next Birthday: <span id="nextBirthdayDate"></span></p>
+            <p>Days Until Next Birthday: <span id="daysUntilBirthday"></span></p>
+        </div>
+
+        <div class="summary-table">
+            <h2>Summary</h2>
+            <table>
+                <tr>
+                    <td>Birth Date:</td>
+                    <td id="summaryBirthDate"></td>
+                </tr>
+                <tr>
+                    <td>Days Until Next Birthday:</td>
+                    <td id="summaryDaysUntil"></td>
+                </tr>
+            </table>
+        </div>
+
+        <a href="next_birthday_calculator.html" class="back-button">Calculate Another Birthday</a>
+        <a href="index.html" class="back-button" style="margin-left: 10px;">Back to Home</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const birthDate = urlParams.get('birthDate');
+            const nextBirthday = urlParams.get('nextBirthday');
+            const daysUntil = urlParams.get('daysUntil');
+
+            if (nextBirthday && daysUntil && birthDate) {
+                document.getElementById('nextBirthdayDate').textContent = nextBirthday;
+                document.getElementById('daysUntilBirthday').textContent = daysUntil;
+
+                document.getElementById('summaryBirthDate').textContent = birthDate;
+                document.getElementById('summaryDaysUntil').textContent = daysUntil;
+            } else {
+                document.getElementById('nextBirthdayDate').textContent = 'N/A';
+                document.getElementById('daysUntilBirthday').textContent = 'N/A';
+                document.getElementById('summaryBirthDate').textContent = 'N/A';
+                document.getElementById('summaryDaysUntil').textContent = 'N/A';
+            }
+        });
+    </script>
+</body>
+</html>]]>
